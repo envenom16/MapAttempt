@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html = style="height: 100%;">
+  <head>
+    <title>DnD World Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scripts/leaflet.css">
+    <script src="scripts/leaflet.js"></script>
+  </head>
+  
+  <body style="height: 100%;margin: 0;">
+    <div id="map" style="width: 100%; height: 100%; background: #253F3B;"></div>
+    <script type="text/javascript">
+  //Creating the Map
+    var map = L.map('map').setView([-56.170023, -72.070313], 0);
+    L.tileLayer('map/{z}/{x}/{y}.png', {
+      continuousWorld: false,
+      noWrap: true,  
+      minZoom: 3,
+      maxZoom: 6,
+    }).addTo(map);
+  //Coordinate Finder
+    var marker = L.marker([0, 0], {
+      draggable: true,
+    }).addTo(map);
+    marker.bindPopup('LatLng Marker').openPopup();
+    marker.on('dragend', function(e) {
+      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+    });
+  //Markers
+
+		// Taldiria & Lerue
+	var ex_1 = L.marker([-65.440002, -141.855469]).bindPopup('The Sands of Scarlet');
+var ex_2 = L.marker([-49.724479, -157.5]).bindPopup('Collic Peninsula');
+var ex_3 = L.marker ([-33.431441,-152.490234]).bindPopup('Whispering Shores');
+var ex_4 = L.marker ([-50.903033,-139.746094]).bindPopup('Cove of Crimson');
+var ex_5 = L.marker ([-65.07213,-115.224609]).bindPopup("Baltaer's Triad");
+var ex_6 = L.marker ([-64.960766,-111.005859]).bindPopup("Baltaer's Spit");
+var ex_7 = L.marker ([-66.443107,-121.113281]).bindPopup('Ruby Bay');
+var ex_8 = L.marker ([-55.178868,-107.050781]).bindPopup("Claws of Crystal");
+var ex_9 = L.marker ([-48.458352,-100.898438]).bindPopup("The Scorched Highlands");
+var ex_10 = L.marker ([-75.230667,-119.003906]).bindPopup("Bridge of Cetius");
+var ex_11  = L.marker ([-5.090944,-127.441406]).bindPopup("The Untouched Shores");
+var ex_12  = L.marker ([-15.114553,-118.125]).bindPopup("Karamara Gulf");
+var ex_13  = L.marker ([-50.958427,-133.59375]).bindPopup("Avey");
+var ex_14  = L.marker ([-67.033163,-117.685547]).bindPopup("Birbach");
+var ex_15  = L.marker ([-66.722541,-113.730469]).bindPopup("Cerdon");
+var ex_16  = L.marker ([-63.253412,-116.762695]).bindPopup("Haswadberg");
+var ex_17  = L.marker ([-55.578345,-121.860352]).bindPopup("Ruthegs");
+var ex_18  = L.marker ([-70.670881,-102.875977]).bindPopup("Marec");
+var ex_19  = L.marker ([-68.895187,-96.28418]).bindPopup("Herte");
+var ex_20  = L.marker ([-49.979488,-91.054688]).bindPopup("Penticos");
+var ex_21  = L.marker ([-55.72711,-154.335938]).bindPopup("Starfall Tower");
+var ex_22  = L.marker ([-44.150681,-145.722656]).bindPopup("Quarlin");
+var ex_23  = L.marker ([-36.738884,-142.734375]).bindPopup("Aern");
+var ex_24  = L.marker ([-35.38905,-118.652344]).bindPopup("Kiljen");
+var ex_25  = L.marker ([-40.044438,-112.675781]).bindPopup("Urexen");
+var ex_26  = L.marker ([-64.148952,-89.956055]).bindPopup("Sartena");
+var ex_27  = L.marker ([-70.78691,-118.476563]).bindPopup("Falknir");	
+		
+		// Republic of Volenia
+		
+var ex_28  = L.marker ([-19.725342, -72.861328]).bindPopup("Triwood");
+var ex_29  = L.marker ([-26.115986, -82.705078]).bindPopup("Nearle");
+var ex_30  = L.marker ([-32.026706, -84.814453]).bindPopup("Reins");
+var ex_31  = L.marker ([-41.310824, -76.552734]).bindPopup("Britesen");
+var ex_32 = L.marker ([-50.289339, -85.166016]).bindPopup("Carley");
+var ex_33 = L.marker ([-47.901614, -66.09375]).bindPopup("Collita");
+var ex_34 = L.marker ([-53.252069, -54.975586]).bindPopup("Southrend");
+var ex_35 = L.marker ([-39.164141, -46.757813]).bindPopup("Tirias");
+var ex_36 = L.marker ([-29.496988, -55.283203]).bindPopup("NAME NAME");
+var ex_37 = L.marker ([-32.879587, -44.472656]).bindPopup("Stormfury");
+var ex_38 = L.marker ([-34.741612, -37.397461]).bindPopup("Draveport");
+var ex_39 = L.marker ([-31.914868, -25.488281]).bindPopup("Shallowfen");
+var ex_40 = L.marker ([-39.571822, -19.863281]).bindPopup("Deepcrest");
+var ex_41 = L.marker ([-50.092393, -46.582031]).bindPopup("Kapelo");
+var ex_42 = L.marker ([-42.423457, -89.780273]).bindPopup("The Northern Spears");
+var ex_43 = L.marker ([-6.620957, -81.650391]).bindPopup("Winchester's Pass");
+var ex_44 = L.marker ([-2.460181, -83.452148]).bindPopup("Olvostien Isles");
+var ex_45 = L.marker ([-25.878994, -55.678711]).bindPopup("Argal's Reef");
+var ex_46 = L.marker ([-32.62087, -41.748047]).bindPopup("Bay of Verela");
+var ex_47 = L.marker ([-12.46876, -49.086914]).bindPopup("The Azurian Coast");
+var ex_48 = L.marker ([-52.241256, -46.186523]).bindPopup("Larenville Lake");
+var ex_49 = L.marker ([-51.261915, -68.686523]).bindPopup("Flat of Dakul");
+var ex_50 = L.marker ([-30.524413, -66.533203]).bindPopup("Altashi Lifts");
+var ex_51 = L.marker ([-44.995883, -34.277344]).bindPopup("Bury");
+		
+		// Ekdrald NOC
+		
+	var ex_54  = L.marker ([-67.575717, -88.681641]).bindPopup("Norester");
+var ex_55  = L.marker ([-72.127936, -92.109375]).bindPopup("Fangwatch");
+var ex_56  = L.marker ([-73.627789, -90.703125]).bindPopup("Lancaster");
+var ex_57  = L.marker ([-72.342464, -82.353516]).bindPopup("Pines Peak");
+var ex_58  = L.marker ([-69.778952, -79.628906]).bindPopup("Westera");
+var ex_59  = L.marker ([-64.997939, -76.201172]).bindPopup("Frosthelm");
+var ex_60  = L.marker ([-63.43086, -72.597656]).bindPopup("Elsewhere");
+var ex_61  = L.marker ([-62.103883, -60.996094]).bindPopup("Strongheart");
+var ex_62  = L.marker ([-70.466207, -72.597656]).bindPopup("Strixhaven");
+var ex_63  = L.marker ([-73.099413, -63.632813]).bindPopup("Whitebridge");
+var ex_64  = L.marker ([-74.283563, -66.621094]).bindPopup("Cliffport");
+var ex_65  = L.marker ([-75.497157, -61.259766]).bindPopup("Mistfall");
+var ex_66  = L.marker ([-70.988349, -53.4375]).bindPopup("Easthaven");
+var ex_67  = L.marker ([-65.622023, -52.119141]).bindPopup("Ashfall");
+var ex_68  = L.marker ([-56.474628, -52.734375]).bindPopup("Rymouth");
+var ex_69  = L.marker ([-66.548263, -40.957031]).bindPopup("Lomire");
+var ex_70  = L.marker ([-66.053716, -34.189453]).bindPopup("Clewich");
+var ex_71  = L.marker ([-74.164085, -47.197266]).bindPopup("Waterhollow");
+var ex_72  = L.marker ([-70.377854, -34.101563]).bindPopup("Highbury Citadel");
+var ex_73  = L.marker ([-68.640555, -65.478516]).bindPopup("The Winding Mountains");
+var ex_74  = L.marker ([-68.528235, -82.705078]).bindPopup("Seretra's Grace");
+var ex_75  = L.marker ([-70.229744, -44.780273]).bindPopup("The Bellimore Thicket");
+var ex_76  = L.marker ([-62.674143, -48.779297]).bindPopup("The Black Plains");
+var ex_77  = L.marker ([-71.244356, -60.820313]).bindPopup("The Wreathing Woods");
+var ex_78  = L.marker ([-68.122482, -24.873047]).bindPopup("Baylet");
+var ex_79  = L.marker ([-75.174549, -53.349609]).bindPopup("Bight of Drelx");
+		// Climalis
+		
+		
+		
+		// Mendon
+		
+		
+		
+		// Da'rwik
+		
+		// Extra
+		
+		
+		//Marker Groups
+    var mg_Cities = L.layerGroup([ex_13,ex_14,ex_15,ex_16,ex_17,ex_18,ex_19,ex_20,ex_21,ex_28,ex_29,ex_30,ex_31,ex_32,ex_33,ex_34,ex_35,ex_36,ex_37,ex_38,ex_39,ex_40,ex_41,ex_51,ex_54,ex_55,ex_56,ex_57,ex_58,ex_59,ex_60,ex_61,ex_62,ex_63,ex_64,ex_65,ex_66,ex_67,ex_68,ex_69,ex_70,ex_71,ex_72,ex_78]);
+	var mg_Regions = L.layerGroup([ex_1, ex_2, ex_3, ex_4, ex_5, ex_6, ex_7, ex_8, ex_9, ex_10, ex_11, ex_12, ex_42, ex_43, ex_44, ex_45, ex_46, ex_47, ex_48, ex_49, ex_50, ex_73, ex_74, ex_75, ex_76, ex_77, ex_78]);
+		
+		//Marker Overlay
+    var overlays= {
+        "Cities" : mg_Cities,
+        "Regions" : mg_Regions,
+    }
+	
+	//GROUP CONTROLS
+    L.control.layers(null, overlays).addTo(map);
+		
+    </script>
+  </body>
+</html>
